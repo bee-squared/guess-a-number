@@ -28,19 +28,21 @@ const StartGameScreen = (props) => {
 
   const confirmInputHandler = () => {
     const chosenNumber = parseInt(enteredValue);
-
+    console.log(chosenNumber)
     if (chosenNumber === NaN || chosenNumber <= 0 || chosenNumber > 99) {
       return;
     }
+
     setConfirmed(true);
+    setSelectedNumber(chosenNumber)
     setEnteredValue('');
-    setSelectedNumber()
   }
 
   let confirmedOutput;
 
   if (confirmed) {
-    confirmedOutput = <Text height={100} style={styles.selectedNumber} >Chosen Number: {selectedNumber}</Text>
+    console.log(enteredValue)
+    confirmedOutput = <Text height={100} style={styles.selectedNumber}>Chosen Number: {selectedNumber} something else</Text>
   }
 
   return (
