@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     color: Colors.accent,
     fontSize: 22,
   }
-
 });
 
 export default NumberContainer;
