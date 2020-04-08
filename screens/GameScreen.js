@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Stylesheet, StyleSheet } from 'react-native';
 
 const generateRandomBetween = (min, max, exclude) => {
@@ -13,7 +13,7 @@ const generateRandomBetween = (min, max, exclude) => {
 }
 
 const GameScreen = (props) => {
-
+  const [currentGuess, setCurrentGuess] = useState(generateRandomBetween(1,100,props.userChoice))
 }
 
 const styles = StyleSheet.create({
