@@ -39,9 +39,11 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
+    alignItems: 'center',
     marginTop: 20,
     width: 300,
     maxWidth: '80%',
+    height: 100,
   }
 })
 
