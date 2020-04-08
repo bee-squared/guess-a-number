@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
     borderColor: Colors.accent,
     padding: 10,
     borderRadius: 10,
-    margin: 10,
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 20,
   },
   number: {
-    color: Colors.accent,
+    color: Colors.primary,
     fontSize: 22,
   }
 });

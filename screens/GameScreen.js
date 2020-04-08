@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, Stylesheet, StyleSheet, Button, Alert } from 'react-native';
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
+import Colors from '../constants/colors';
 
 const generateRandomBetween = (min, max, exclude) => {
   min = Math.ceil(min);
@@ -35,7 +36,7 @@ const GameScreen = (props) => {
       (direction === 'lower' && currentGuess < props.userChoice) ||
       (direction === 'greater' && currentGuess > props.userChoice)
     ) {
-      Alert.alert('Don\'t lie', 'You know that this is wrong...', [{ text: 'Sorry!', style: 'cancel' }
+      Alert.alert('Whoops!', 'Actually, that\'s not correct', [{ text: 'My bad', style: 'cancel' }
       ]);
       return;
     }
@@ -54,10 +55,10 @@ const GameScreen = (props) => {
     <View style={styles.screen}>
       <Text style={styles.guess}>Opponent's Guess</Text>
       <NumberContainer>{currentGuess}</NumberContainer>
+      <View style={styles.divider}></View>
       <Card style={styles.buttonContainer}>
-        <Button title='LOWER' onPress={() => nextGuessHandler('lower')} />
-        <Button title='GREATER' onPress={() => nextGuessHandler('greater')} />
-        {console.log(currentGuess)}
+        <Button title='LOWER' color={Colors.accent} onPress={() => nextGuessHandler('lower')} />
+        <Button title='GREATER' color={Colors.accent} onPress={() => nextGuessHandler('greater')} />
       </Card>
     </View>
   )
@@ -77,6 +78,18 @@ const styles = StyleSheet.create({
     width: 300,
     maxWidth: '80%',
     height: 100,
+  },
+  guess: {
+    fontSize: 22,
+    marginTop: 30,
+    marginBottom: 30,
+  },
+  divider: {
+    borderBottomWidth: 1,
+    borderColor: 'black',
+    height: 1,
+    flexDirection: 'row',
+    width: '90%',
   }
 })
 

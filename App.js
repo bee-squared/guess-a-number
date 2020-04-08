@@ -4,6 +4,7 @@ import Header from './components/Header';
 import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
 import GameOverScreen from './screens/GameOverScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();

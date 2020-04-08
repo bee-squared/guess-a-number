@@ -51,7 +51,7 @@ const StartGameScreen = (props) => {
       <Card style={styles.summaryContainer} >
           <Text style={styles.instruction}>You selected</Text>
           <NumberContainer>{selectedNumber}</NumberContainer>
-          <Button title="START GAME" onPress={() => props.onStartGame(selectedNumber)}/>
+          <Button color={Colors.accent} title="START GAME" onPress={() => props.onStartGame(selectedNumber)}/>
       </Card>
     )
   }
@@ -80,14 +80,14 @@ const StartGameScreen = (props) => {
               <Button
                 title='Reset'
                 onPress={resetInputHandler}
-                color={Colors.accent}
+                color={Colors.primary}
               />
             </View>
             <View style={styles.button}>
               <Button
                 title='Confirm'
                 onPress={confirmInputHandler}
-                color={Colors.primary} />
+                color={Colors.accent} />
             </View>
           </View>
         </Card>
@@ -99,7 +99,6 @@ const StartGameScreen = (props) => {
 
 const styles = StyleSheet.create({
   screen: {
-    // flex: 1, // takes all the space it can get, both vertically and horizontally
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
@@ -111,7 +110,7 @@ const styles = StyleSheet.create({
   },
   instruction: {
     color: 'black',
-    marginBottom: 20,
+    marginBottom: 10,
     fontSize: 20,
   },
   inputContainer: {
@@ -139,6 +138,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 300,
     maxWidth: '80%',
+    height: 200,
   },
 });
 
