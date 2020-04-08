@@ -15,7 +15,7 @@ const generateRandomBetween = (min, max, exclude) => {
 }
 
 const GameScreen = (props) => {
-  const [currentGuess, setCurrentGuess] = useState(generateRandomBetween(1,100,props.userChoice))
+  const [currentGuess, setCurrentGuess] = useState(generateRandomBetween(1, 100, props.userChoice))
 
   return (
     <View style={styles.screen}>
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginTop: 20,
     width: 300,
-    maxWidth: '80%'',
+    maxWidth: '80%',
   }
 })
 
