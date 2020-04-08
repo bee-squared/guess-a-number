@@ -57,8 +57,8 @@ const GameScreen = (props) => {
       <NumberContainer>{currentGuess}</NumberContainer>
       <View style={styles.divider}></View>
       <Card style={styles.buttonContainer}>
-        <Button title='LOWER' color={Colors.accent} onPress={() => nextGuessHandler('lower')} />
-        <Button title='GREATER' color={Colors.accent} onPress={() => nextGuessHandler('greater')} />
+        <Button title='-' color={Colors.accent} onPress={() => nextGuessHandler('lower')} />
+        <Button title='+' color={Colors.accent} onPress={() => nextGuessHandler('greater')} />
       </Card>
     </View>
   )

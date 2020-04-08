@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     color: 'black',
     padding: 30,
     fontSize: 25,
+    fontFamily: 'open-sans-bold',
   },
   instruction: {
     color: 'black',
