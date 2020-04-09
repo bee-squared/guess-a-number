@@ -7,12 +7,17 @@ import DefaultStyles from '../constants/default-styles';
 const GameOverScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Text style={{...DefaultStyles.title, ...styles.text}}>Nice Job!</Text>
-      <Image
-        style={styles.image}
-        source={require('../assets/images/success.png')}
-        resizeMode={'cover'}
-      />
+      <Text style={{...DefaultStyles.title, ...styles.text, marginTop: 60}}>Nice Job!</Text>
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.image}
+          fadeDuration={500}
+          // local image source
+          // source={require('../assets/images/success.png')}
+          source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQg2xR-iMflkjg9gDmuZPFeCW9G_qd6EAniNlVDFRwz1z6WpEdJ&usqp=CAU'}}
+          resizeMode={'cover'}
+        />
+      </View>
       <Text style={{...DefaultStyles.title, ...styles.text}}>The Game is Over</Text>
       <View style={styles.statsContainer}>
         <Text style={{...DefaultStyles.bodyText, ...styles.stats}}>Number of rounds: {props.roundsNumber}</Text>
@@ -44,10 +49,18 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: Colors.primary,
   },
-  image: {
+  imageContainer: {
+    borderRadius: 150,
+    borderWidth: 2,
+    borderColor: 'black',
+    overflow: 'hidden',
     marginVertical: 20,
-    height: '40%',
-    width: '90%',
+    width: 300,
+    height: 300,
+  },
+  image: {
+    height: '100%',
+    width: '100%',
   },
 });
 
