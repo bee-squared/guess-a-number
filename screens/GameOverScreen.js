@@ -8,7 +8,11 @@ const GameOverScreen = (props) => {
   return (
     <View style={styles.screen}>
       <Text style={{...DefaultStyles.title, ...styles.text}}>Nice Job!</Text>
-      <Image source={require('../assets/images/success.png')}/>
+      <Image
+        style={styles.image}
+        source={require('../assets/images/success.png')}
+        resizeMode={'cover'}
+      />
       <Text style={{...DefaultStyles.title, ...styles.text}}>The Game is Over</Text>
       <View style={styles.statsContainer}>
         <Text style={{...DefaultStyles.bodyText, ...styles.stats}}>Number of rounds: {props.roundsNumber}</Text>
@@ -39,7 +43,12 @@ const styles = StyleSheet.create({
   stats: {
     fontSize: 18,
     color: Colors.primary,
-  }
+  },
+  image: {
+    marginVertical: 20,
+    height: '40%',
+    width: '90%',
+  },
 });
 
 export default GameOverScreen;
