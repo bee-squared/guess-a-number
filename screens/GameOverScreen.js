@@ -12,16 +12,16 @@ const GameOverScreen = (props) => {
         <Image
           style={styles.image}
           fadeDuration={500}
-          // local image source
-          // source={require('../assets/images/success.png')}
-          source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQg2xR-iMflkjg9gDmuZPFeCW9G_qd6EAniNlVDFRwz1z6WpEdJ&usqp=CAU'}}
-          resizeMode={'cover'}
+          source={require('../assets/images/success.png')}
+          // network image option
+          // source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQg2xR-iMflkjg9gDmuZPFeCW9G_qd6EAniNlVDFRwz1z6WpEdJ&usqp=CAU'}}
+          // resizeMode={'cover'}
         />
       </View>
       <Text style={{...DefaultStyles.title, ...styles.text}}>The Game is Over</Text>
       <View style={styles.statsContainer}>
-        <Text style={{...DefaultStyles.bodyText, ...styles.stats}}>Number of rounds: {props.roundsNumber}</Text>
-        <Text style={{...DefaultStyles.bodyText, ...styles.stats}}>Number was: {props.userNumber}</Text>
+        <Text style={{...DefaultStyles.bodyText, ...styles.stats}}>Your phone needed <Text style={DefaultStyles.textHighlight}>{props.roundsNumber}</Text> rounds to guess the number <Text style={DefaultStyles.textHighlight}>{props.userNumber}</Text></Text>
+
       </View>
       <Button title="New Game" color={Colors.accent} onPress={props.onRestart} />
     </View>
@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
   },
   stats: {
     fontSize: 18,
-    color: Colors.primary,
+    color: 'black',
+    textAlign: 'center',
   },
   imageContainer: {
     borderRadius: 150,
