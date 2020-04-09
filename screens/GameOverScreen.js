@@ -1,15 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
+
 import Colors from '../constants/colors';
+import DefaultStyles from '../constants/default-styles';
 
 const GameOverScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Text style={styles.text}>Nice Job!</Text>
-      <Text style={styles.text}>The Game is Over</Text>
+      <Text style={{...DefaultStyles.title, ...styles.text}}>Nice Job!</Text>
+      <Text style={{...DefaultStyles.title, ...styles.text}}>The Game is Over</Text>
       <View style={styles.statsContainer}>
-        <Text style={styles.stats}>Number of rounds: {props.roundsNumber}</Text>
-        <Text style={styles.stats}>Number was: {props.userNumber}</Text>
+        <Text style={{...DefaultStyles.bodyText, ...styles.stats}}>Number of rounds: {props.roundsNumber}</Text>
+        <Text style={{...DefaultStyles.bodyText, ...styles.stats}}>Number was: {props.userNumber}</Text>
       </View>
       <Button title="New Game" color={Colors.accent} onPress={props.onRestart} />
     </View>

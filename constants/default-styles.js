@@ -8,6 +8,5 @@ export default StyleSheet.create({
   title: {
     fontFamily: 'open-sans-bold',
     fontSize: 55,
-    color: 'red',
   }
 })
