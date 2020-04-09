@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Button, Image } from 'react-native';
 
 import Colors from '../constants/colors';
 import DefaultStyles from '../constants/default-styles';
@@ -8,6 +8,7 @@ const GameOverScreen = (props) => {
   return (
     <View style={styles.screen}>
       <Text style={{...DefaultStyles.title, ...styles.text}}>Nice Job!</Text>
+      <Image source={require('../assets/images/success.png')}/>
       <Text style={{...DefaultStyles.title, ...styles.text}}>The Game is Over</Text>
       <View style={styles.statsContainer}>
         <Text style={{...DefaultStyles.bodyText, ...styles.stats}}>Number of rounds: {props.roundsNumber}</Text>
