@@ -3,6 +3,7 @@ import { View, Text, Stylesheet, StyleSheet, Button, Alert } from 'react-native'
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
 import Colors from '../constants/colors';
+import DefaultStyles from '../constants/default-styles';
 
 const generateRandomBetween = (min, max, exclude) => {
   min = Math.ceil(min);
