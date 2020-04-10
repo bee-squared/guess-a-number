@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, Text, Stylesheet, StyleSheet, Alert } from 'react-native';
+import { View, Text, Stylesheet, StyleSheet, Alert, ScrollView } from 'react-native';
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
 import Colors from '../constants/colors';
@@ -20,7 +20,7 @@ const generateRandomBetween = (min, max, exclude) => {
 
 const GameScreen = (props) => {
   const initialGuess = generateRandomBetween(1, 100, props.userChoice);
-  const [currentGuess, setCurrentGuess] = useState(initialGuess); 
+  const [currentGuess, setCurrentGuess] = useState(initialGuess);
   const [pastGuesses, setPastGuesses] = useState([initialGuess]);
   const currentLow = useRef(1);
   const currentHigh = useRef(100);
@@ -46,7 +46,7 @@ const GameScreen = (props) => {
     if (direction === 'lower') {
       currentHigh.current = currentGuess;
     } else {
-      currentLow.current = currentGuess;
+      currentLow.current = currentGuess + 1; // added 1 to ensure guess key is unique for guess list
     }
     const nextNumber = generateRandomBetween(currentLow.current, currentHigh.current, currentGuess);
     setCurrentGuess(nextNumber);
@@ -63,9 +63,15 @@ const GameScreen = (props) => {
         <MainButton onPress={() => nextGuessHandler('lower')} textStyle={styles.guess}><Ionicons name={'md-remove'} size={24} color={'white'}/></MainButton>
         <MainButton onPress={() => nextGuessHandler('greater')} textStyle={styles.guess}><Ionicons name={'md-add'} size={24} color={'white'}/></MainButton>
       </Card>
+        <ScrollView>
+          {pastGuesses.map((guess) => (
+            <View key={guess}>
+              <Text>{guess}</Text>
+            </View>
+          ))}
+        </ScrollView>
     </View>
   )
-
 }
 
 const styles = StyleSheet.create({
