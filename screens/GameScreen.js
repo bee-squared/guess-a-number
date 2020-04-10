@@ -81,6 +81,7 @@ const GameScreen = (props) => {
 
 const styles = StyleSheet.create({
   screen: {
+    flex: 1,
     padding: 10,
     alignItems: 'center',
   },
@@ -105,7 +106,10 @@ const styles = StyleSheet.create({
     width: '80%',
   },
   list: {
-    width: '80%'
+    flex: 1,
+    width: '80%',
+    borderColor: 'black',
+    borderWidth: 10,
   },
   listItem: {
     flexDirection: 'row',
