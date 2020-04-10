@@ -108,8 +108,6 @@ const styles = StyleSheet.create({
   list: {
     flex: 1,
     width: '80%',
-    borderColor: 'black',
-    borderWidth: 10,
   },
   listItem: {
     flexDirection: 'row',
