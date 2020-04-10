@@ -134,10 +134,11 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    height: 50,
+    height: 38,
   },
   button: {
-    width: Dimensions.get('window').width / 5,
+    width: Dimensions.get('window').height > 600 ? '45%' : '42%',
+    // width: Dimensions.get('window').width / 5,
   },
   input: {
     width: 50,

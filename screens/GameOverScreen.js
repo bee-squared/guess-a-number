@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, Image } from 'react-native';
+import { View, Text, StyleSheet, Button, Image, Dimensions } from 'react-native';
 
 import MainButton from '../components/MainButton';
 
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignSelf: 'center',
     width: '80%',
-    height: '80%',
+    height: Dimensions.get('window').height > 600 ? '80%' : '70%',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
   },
   statsContainer: {
-    marginVertical: 25,
+    marginVertical: Dimensions.get('window').height > 600 ? 25 : 15,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -51,15 +51,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: 'black',
     textAlign: 'center',
+    marginVertical: 10,
   },
   imageContainer: {
-    borderRadius: 150,
+    borderRadius: Dimensions.get('window').height > 600 ? 150 : 75,
     borderWidth: 2,
     borderColor: 'black',
     overflow: 'hidden',
     marginVertical: 20,
-    width: 300,
-    height: 300,
+    width: Dimensions.get('window').height > 600 ? 300 : 150,
+    height: Dimensions.get('window').height > 600 ? 300 : 150,
   },
   image: {
     height: '100%',

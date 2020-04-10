@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 import Colors from '../constants/colors';
 
@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontFamily: 'open-sans-bold',
-    // fontSize: Dimensions.get('window').height > 600 ? 18 : 112,
   },
 });
 
