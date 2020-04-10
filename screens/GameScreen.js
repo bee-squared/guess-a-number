@@ -1,5 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, Text, Stylesheet, StyleSheet, Alert, ScrollView, FlatList } from 'react-native';
+import { View,
+  Text,
+  Stylesheet,
+  StyleSheet,
+  Alert,
+  ScrollView,
+  FlatList,
+  Dimensions,
+ } from 'react-native';
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
 import Colors from '../constants/colors';
@@ -104,8 +112,9 @@ const styles = StyleSheet.create({
     height: 100,
   },
   guess: {
-    marginTop: 30,
-    marginBottom: 30,
+    marginTop: Dimensions.get('window').height / 20 > 600 ? 20 : 5,
+    marginBottom: Dimensions.get('window').height / 20 > 600 ? 30 : 10,
+    fontSize: Dimensions.get('window').height > 600 ? 25 : 15,
   },
   divider: {
     borderBottomWidth: 1,
@@ -113,6 +122,7 @@ const styles = StyleSheet.create({
     height: 1,
     flexDirection: 'row',
     width: '80%',
+    marginVertical: 20,
   },
   listContainer: {
     flex: 1,
@@ -120,7 +130,6 @@ const styles = StyleSheet.create({
   },
   list: {
     flexGrow: 1,
-    // alignItems: 'center',
     justifyContent: 'flex-end',
   },
   listItem: {

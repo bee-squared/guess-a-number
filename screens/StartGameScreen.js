@@ -7,6 +7,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   Alert,
+  Dimensions,
 } from 'react-native';
 import Card from '../components/Card';
 import Input from '../components/Input';
@@ -105,26 +106,28 @@ const styles = StyleSheet.create({
   screen: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 30,
+    padding: Dimensions.get('window').height > 600 ? 30 : 10,
   },
   title: {
     color: 'black',
-    padding: 30,
-    fontSize: 25,
+    padding: Dimensions.get('window').height > 600 ? 10 : 5,
+    fontSize: Dimensions.get('window').height > 600 ? 25 : 15,
     fontFamily: 'open-sans-bold',
+    marginBottom: 10,
   },
   instruction: {
     marginBottom: 10,
-    fontSize: 20,
+    fontSize: Dimensions.get('window').height > 600 ? 20 : 16,
     fontFamily: 'open-sans',
   },
   inputContainer: {
     justifyContent: 'center',
-    width: 300,
+    width: 280,
     // maxWidth: '80%',
     maxWidth: '95%',
-    minWidth: 300,
+    minWidth: 280,
     alignItems: 'center',
+    height: Dimensions.get('window').height > 600 ? 210 : 180,
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -134,18 +137,19 @@ const styles = StyleSheet.create({
     height: 50,
   },
   button: {
-    width: 100,
+    width: Dimensions.get('window').width / 5,
   },
   input: {
     width: 50,
     textAlign: 'center',
+    fontSize: Dimensions.get('window').height > 600 ? 28 : 20,
   },
   summaryContainer: {
     marginTop: 20,
     alignItems: 'center',
-    width: 300,
+    width: 280,
     maxWidth: '80%',
-    height: 220,
+    height: Dimensions.get('window').height > 600 ? 220 : 180,
   },
 });
 
