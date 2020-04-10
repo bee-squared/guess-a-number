@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   screen: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
+    padding: 30,
   },
   title: {
     color: 'black',
@@ -114,7 +114,6 @@ const styles = StyleSheet.create({
     fontFamily: 'open-sans-bold',
   },
   instruction: {
-    // color: 'black',
     marginBottom: 10,
     fontSize: 20,
     fontFamily: 'open-sans',
@@ -122,7 +121,9 @@ const styles = StyleSheet.create({
   inputContainer: {
     justifyContent: 'center',
     width: 300,
-    maxWidth: '80%',
+    // maxWidth: '80%',
+    maxWidth: '95%',
+    minWidth: 300,
     alignItems: 'center',
   },
   buttonContainer: {
@@ -144,7 +145,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 300,
     maxWidth: '80%',
-    height: 200,
+    height: 220,
   },
 });
 
