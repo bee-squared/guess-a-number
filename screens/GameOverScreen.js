@@ -9,7 +9,7 @@ import DefaultStyles from '../constants/default-styles';
 const GameOverScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Text style={{...DefaultStyles.title, ...styles.text, marginTop: 60}}>Nice Job!</Text>
+      <Text style={{...DefaultStyles.title, ...styles.text, marginTop: 60 }}>Nice Job!</Text>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
   },
   statsContainer: {
-    marginVertical: Dimensions.get('window').height > 600 ? 25 : 15,
+    marginVertical: Dimensions.get('window').height > 600 ? 25 : 20,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -54,13 +54,13 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   imageContainer: {
-    borderRadius: Dimensions.get('window').height > 600 ? 150 : 75,
+    width: Dimensions.get('window').height > 600 ? Dimensions.get('window').width * 0.7 : Dimensions.get('window').width * 0.45,
+    height: Dimensions.get('window').height > 600 ? Dimensions.get('window').width * 0.7 : Dimensions.get('window').width * 0.45,
+    borderRadius: Dimensions.get('window').height > 600 ? Dimensions.get('window').width * 0.7 / 2 : Dimensions.get('window').width * 0.45 / 2,
     borderWidth: 2,
     borderColor: 'black',
     overflow: 'hidden',
-    marginVertical: 20,
-    width: Dimensions.get('window').height > 600 ? 300 : 150,
-    height: Dimensions.get('window').height > 600 ? 300 : 150,
+    marginVertical: Dimensions.get('window').height > 600 ? Dimensions.get('window').height / 45 : Dimensions.get('window').height / 60,
   },
   image: {
     height: '100%',
