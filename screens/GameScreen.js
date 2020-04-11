@@ -83,11 +83,11 @@ const GameScreen = (props) => {
     setPastGuesses(curPastGuesses => [nextNumber.toString(), ...curPastGuesses])
   };
 
-  if (availableDeviceWidth < 400) {
-    listContainer = styles.listContainerBig;
+  if (availableDeviceWidth > 500) {
+    styles.listContainer = styles.listContainerSmall;
   }
 
-  if (availableDeviceWidth < 500) {
+  if (availableDeviceWidth < 600) {
     return (
       <View style={styles.screen}>
         <Text style={styles.guess}>Opponent's Guess</Text>
@@ -176,12 +176,12 @@ const styles = StyleSheet.create({
   listContainer: {
     flex: 1,
     width: '60%',
-    marginBottom: 15,
+    marginBottom: 30,
   },
-  listContainerBig: {
+  listContainerSmall: {
     flex: 1,
     width: '60%',
-    marginBottom: 30,
+    marginBottom: 15,
   },
   list: {
     flexGrow: 1,
