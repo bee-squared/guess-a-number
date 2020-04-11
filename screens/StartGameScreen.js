@@ -148,10 +148,10 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: 'row',
+    height: 38,
     width: '100%',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    height: 38,
   },
   // button: {
   //   width: Dimensions.get('window').height > 600 ? '45%' : '42%',
@@ -165,8 +165,9 @@ const styles = StyleSheet.create({
   summaryContainer: {
     marginTop: 20,
     alignItems: 'center',
-    width: 280,
-    maxWidth: '80%',
+    width: Dimensions.get('window').height > 600 ? '80%' : '20%',
+    maxWidth: '95%',
+    minWidth: Dimensions.get('window').height > 600 ? '80%' : '70%',
     height: Dimensions.get('window').height > 600 ? 220 : 180,
   },
 });

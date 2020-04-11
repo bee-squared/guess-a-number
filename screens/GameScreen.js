@@ -69,6 +69,37 @@ const GameScreen = (props) => {
     setPastGuesses(curPastGuesses => [nextNumber.toString(), ...curPastGuesses])
   };
 
+  if (Dimensions.get('window').height < 500) {
+    return (
+      <View style={styles.screen}>
+        <Text style={styles.guess}>Opponent's Guess</Text>
+        <View style={styles.controls}>
+          <MainButton onPress={() => nextGuessHandler('lower')} textStyle={styles.guess}>
+            <Ionicons name={'md-remove'} size={24} color={'white'}/>
+          </MainButton>
+          <NumberContainer>{currentGuess}</NumberContainer>
+          <MainButton onPress={() => nextGuessHandler('greater')} textStyle={styles.guess}>
+            <Ionicons name={'md-add'} size={24} color={'white'}/>
+          </MainButton>
+        </View>
+        <View style={styles.listContainer}>
+          {// scrollView instead of flatlist is below}
+          /* <ScrollView contentContainerStyle={styles.list}>
+            {pastGuesses.map((guess, index) => renderListItem(guess, pastGuesses.length - index))}
+          </ScrollView> */}
+          <FlatList
+            keyExtractor={(item) => item}
+            data={pastGuesses}
+            renderItem={(itemData) => renderListItem(pastGuesses.length, itemData)}
+            contentContainerStyle={styles.list}
+            // another option
+            //renderItem={renderListItem.bind(this, pastGuesses.length)}
+          />
+      </View>
+    </View>
+    )
+  }
+
   return (
     <View style={styles.screen}>
       <Text style={styles.guess}>Opponent's Guess</Text>
@@ -142,6 +173,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     justifyContent: 'space-around',
     width: '100%',
+  },
+  controls: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '80%',
   }
 })
 
