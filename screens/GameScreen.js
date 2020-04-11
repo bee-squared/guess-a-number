@@ -37,10 +37,24 @@ const GameScreen = (props) => {
   const initialGuess = generateRandomBetween(1, 100, props.userChoice);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
   const [pastGuesses, setPastGuesses] = useState([initialGuess.toString()]);
+  const [availableDeviceWidth, setAvailableDeviceWidth] = useState(Dimensions.get('window').width)
+  const [availableDeviceHeight, setAvailableDeviceHeight] = useState(Dimensions.get('window').height)
   const currentLow = useRef(1);
   const currentHigh = useRef(100);
 
   const { userChoice, onGameOver } = props;
+
+  useEffect(() => {
+    const updateLayout = () => {
+      setAvailableDeviceWidth(Dimensions.get('window').width);
+      setAvailableDeviceHeight(Dimensions.get('window').height);
+    }
+    Dimensions.addEventListener('change', updateLayout);
+
+    return () => {
+      Dimensions.removeEventListener('change', updateLayout);
+    }
+  })
 
   useEffect(() => {
     if (currentGuess === props.userChoice) {
@@ -69,7 +83,11 @@ const GameScreen = (props) => {
     setPastGuesses(curPastGuesses => [nextNumber.toString(), ...curPastGuesses])
   };
 
-  if (Dimensions.get('window').height < 500) {
+  if (availableDeviceWidth < 400) {
+    listContainer = styles.listContainerBig;
+  }
+
+  if (availableDeviceWidth < 500) {
     return (
       <View style={styles.screen}>
         <Text style={styles.guess}>Opponent's Guess</Text>
@@ -158,7 +176,12 @@ const styles = StyleSheet.create({
   listContainer: {
     flex: 1,
     width: '60%',
-    marginBottom: Dimensions.get('window').height > 600 ? 30 : 15,
+    marginBottom: 15,
+  },
+  listContainerBig: {
+    flex: 1,
+    width: '60%',
+    marginBottom: 30,
   },
   list: {
     flexGrow: 1,

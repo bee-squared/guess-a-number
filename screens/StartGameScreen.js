@@ -151,7 +151,6 @@ const styles = StyleSheet.create({
     height: 38,
     width: '100%',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
   },
   // button: {
   //   width: Dimensions.get('window').height > 600 ? '45%' : '42%',
