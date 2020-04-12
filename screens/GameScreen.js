@@ -13,7 +13,8 @@ import Card from '../components/Card';
 import Colors from '../constants/colors';
 import DefaultStyles from '../constants/default-styles';
 import MainButton from '../components/MainButton';
-import {Ionicons} from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import { ScreenOrientation } from 'expo';
 
 const generateRandomBetween = (min, max, exclude) => {
   min = Math.ceil(min);
@@ -34,6 +35,9 @@ const renderListItem = (listLength, itemData) => (
 )
 
 const GameScreen = (props) => {
+  // Lock the layout orientation for the user once it is set during app load
+  // ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+
   const initialGuess = generateRandomBetween(1, 100, props.userChoice);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
   const [pastGuesses, setPastGuesses] = useState([initialGuess.toString()]);
