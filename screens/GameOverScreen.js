@@ -8,7 +8,7 @@ import DefaultStyles from '../constants/default-styles';
 
 const GameOverScreen = (props) => {
   return (
-    // <ScrollView>
+    <ScrollView contentContainerStyle={styles.scroll}>
       <View style={styles.screen}>
         <Text style={{...DefaultStyles.title, ...styles.text, marginTop: 60 }}>Nice Job!</Text>
         <View style={styles.imageContainer}>
@@ -28,7 +28,7 @@ const GameOverScreen = (props) => {
         </View>
         <MainButton onPress={props.onRestart}>New Game</MainButton>
       </View>
-    // </ScrollView>
+      </ScrollView>
   )
 }
 
@@ -56,9 +56,9 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   imageContainer: {
-    width: Dimensions.get('window').height > 600 ? Dimensions.get('window').width * 0.7 : Dimensions.get('window').width * 0.45,
-    height: Dimensions.get('window').height > 600 ? Dimensions.get('window').width * 0.7 : Dimensions.get('window').width * 0.45,
-    borderRadius: Dimensions.get('window').height > 600 ? Dimensions.get('window').width * 0.7 / 2 : Dimensions.get('window').width * 0.45 / 2,
+    width: Dimensions.get('window').height > 500 ? Dimensions.get('window').width * 0.7 : Dimensions.get('window').width * 0.45,
+    height: Dimensions.get('window').height > 500 ? Dimensions.get('window').width * 0.7 : Dimensions.get('window').width * 0.45,
+    borderRadius: Dimensions.get('window').height > 500 ? Dimensions.get('window').width * 0.7 / 2 : Dimensions.get('window').width * 0.45 / 2,
     borderWidth: 2,
     borderColor: 'black',
     overflow: 'hidden',
@@ -68,6 +68,9 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
   },
+  scroll: {
+    justifyContent: 'center',
+  }
 });
 
 export default GameOverScreen;

@@ -87,7 +87,7 @@ const GameScreen = (props) => {
     styles.listContainer = styles.listContainerSmall;
   }
 
-  if (availableDeviceWidth < 600) {
+  if (availableDeviceHeight < 500) {
     return (
       <View style={styles.screen}>
         <Text style={styles.guess}>Opponent's Guess</Text>
