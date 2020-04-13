@@ -2,7 +2,7 @@
 
 'Guess A Number' is a react native game that allows users to interact with their device to guess a defined number based on the users input. Available for both iOS and Android platforms.
 
-![Intro Image](./README_Images/game.jpeg "game.jpeg")
+![Intro Image](./README_Images/game.png "game.png")
 
 ## Getting Started
 
