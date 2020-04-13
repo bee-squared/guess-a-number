@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, Image, Dimensions, ScrollView } from 'react-native';
+import { View,
+  Text,
+  StyleSheet,
+  Button,
+  Image,
+  Dimensions,
+  ScrollView
+} from 'react-native';
 
 import MainButton from '../components/MainButton';
 
@@ -28,7 +35,7 @@ const GameOverScreen = (props) => {
         </View>
         <MainButton onPress={props.onRestart}>New Game</MainButton>
       </View>
-      </ScrollView>
+    </ScrollView>
   )
 }
 

@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  // SafeAreaView,
+ } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
